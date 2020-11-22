@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blueprint: Multi-Level Menu</title>
+	<meta name="description" content="Blueprint: A basic template for a responsive multi-level menu" />
+	<meta name="keywords" content="blueprint, template, html, css, menu, responsive, mobile-friendly" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- food icons -->
+	<link rel="stylesheet" type="text/css" href="/static/MultiLevelMenu-master/css/organicfoodicons.css" />
+	<link rel="stylesheet" href="{{ url_for('static',filename='MultiLevelMenu-master/css/organicfoodicons.css') }}">
+	<!-- demo styles -->
+	<link rel="stylesheet" type="text/css" href="/static/MultiLevelMenu-master/css/demo.css" />
+	<link rel="stylesheet" href="{{ url_for('static',filename='MultiLevelMenu-master/css/demo.css') }}">
+	<!-- menu styles -->
+	<link rel="stylesheet" type="text/css" href="/static/MultiLevelMenu-master/css/component.css" />
+	<link rel="stylesheet" href="{{ url_for('static',filename='MultiLevelMenu-master/css/component.css') }}">
+	<!-- style myself -->
+	<link rel="stylesheet" href="/static/style/menupage.css">
+	<link rel="stylesheet" href="{{ url_for('static',filename='style/menupage.css') }}">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<!-- font awesome -->
+	<script src="/static/MultiLevelMenu-master/js/modernizr-custom.js"></script>
+	<script src="static/MultiLevelMenu-master/js/modernizr-custom.js"></script>
+</head>
+
+<body>
+	<!-- Main container -->
+	<div class="container">
+		<!-- Blueprint header -->
+		<header class="bp-header cf">
+			<div class="dummy-logo">
+				<h2 class="dummy-heading">{{name}}</h2>
+				<input type="submit" value="ยืนยัน" id="submit">
+			</div>
+			<div class="bp-header__main">
+				<nav class="bp-nav">
+					<a class="bp-nav__item bp-icon bp-icon--prev" href="/templates/menupage/menupage.html" data-info="BACK"><span>BACK</span></a>
+					<a class="bp-nav__item bp-icon bp-icon--prev" href="/templates/index.html" data-info="HOME"></a>
+				</nav>
+			</div>
+		</header>
+		<button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button>
+		<nav id="ml-menu" class="menu">
+			<button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button>
+			<div class="menu__wrap">
+				<ul data-menu="main" class="menu__level" tabindex="-1" role="menu" aria-label="All">
+					<li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1" aria-owns="submenu-1" href="#">เมนูข้าว</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2" aria-owns="submenu-2" href="#">เมนูเส้น</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" maria-owns="submenu-2" href="#">เมนูแนะนำ</a></li>
+					<li class="display-q" role="menuitem">คิวที่เหลืออยู่</li>
+					<li class="display-num" role="menuitem">{{queue}}<span>คิว</span></li>
+					<!-- <li class="menu__item" role="menuitem"><p class="menu__link" id="display-q">คิวที่เหลืออยู่</p></li> -->
+				</ul>
+				
+				<!-- Submenu 1 -->
+				<ul data-menu="submenu-1" id="submenu-1" class="menu__level" tabindex="-1" role="menu" aria-label="Vegetables">
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="#">Stalk Vegetables</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="#">Roots &amp; Seeds</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="#">Cabbages</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="#">Salad Greens</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="#">Mushrooms</a></li>
+				</ul>
+				<!-- Submenu 2 -->
+				<ul data-menu="submenu-2" id="submenu-2" class="menu__level" tabindex="-1" role="menu" aria-label="Fruits">
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="#">Citrus Fruits</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="#">Berries</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="#">Tropical Fruits</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="#">Melons</a></li>
+				</ul>
+				<!-- Submenu 3 -->
+				<ul data-menu="submenu-3" id="submenu-3" class="menu__level" tabindex="-1" role="menu" aria-label="Grains">
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="#">Buckwheat</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="content">
+			<p class="info">Please choose a menu</p>
+			<!-- Ajax loaded content here -->
+		</div>
+	</div>
+	<!-- /view -->
+	<script src="/static/MultiLevelMenu-master/js/classie.js"></script>
+	<script src="/static/MultiLevelMenu-master/js/dummydata.js"></script>
+	<script src="/static/MultiLevelMenu-master/js/main.js"></script>
+	<script src="static/MultiLevelMenu-master/js/classie.js"></script>
+	<script src="static/MultiLevelMenu-master/js/dummydata.js"></script>
+	<script src="static/MultiLevelMenu-master/js/main.js"></script>
+	<script>
+	(function() {
+		var menuEl = document.getElementById('ml-menu'),
+			mlmenu = new MLMenu(menuEl, {
+				// breadcrumbsCtrl : true, // show breadcrumbs
+				// initialBreadcrumb : 'all', // initial breadcrumb text
+				backCtrl : false, // show back button
+				// itemsDelayInterval : 60, // delay between each menu item sliding animation
+				onItemClick: loadDummyData // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
+			});
+
+		// mobile menu toggle
+		var openMenuCtrl = document.querySelector('.action--open'),
+			closeMenuCtrl = document.querySelector('.action--close');
+
+		openMenuCtrl.addEventListener('click', openMenu);
+		closeMenuCtrl.addEventListener('click', closeMenu);
+
+		function openMenu() {
+			classie.add(menuEl, 'menu--open');
+			closeMenuCtrl.focus();
+		}
+
+		function closeMenu() {
+			classie.remove(menuEl, 'menu--open');
+			openMenuCtrl.focus();
+		}
+
+		// simulate grid content loading
+		var gridWrapper = document.querySelector('.content');
+
+		function loadDummyData(ev, itemName) {
+			ev.preventDefault();
+
+			closeMenu();
+			gridWrapper.innerHTML = '';
+			classie.add(gridWrapper, 'content--loading');
+			setTimeout(function() {
+				classie.remove(gridWrapper, 'content--loading');
+				gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] + '<ul>';
+			}, 700);
+		}
+	})();
+	</script>
+</body>
+
+</html>

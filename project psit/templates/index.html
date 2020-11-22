@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ของหมด กินอะไรดี</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style/style.css') }}">
+    <link rel="stylesheet" href="/static/style/style.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <!-- use w3 framework and bootstrap framework -->
+</head>
+
+<body>
+    <div class="bgimg w3-display-container w3-text-white">
+        <div class="w3-display-middle w3-jumbo">
+            <p>ของหมด กินอะไรดี</p>
+        </div>
+        <div class="w3-display-topleft w3-container w3-xlarge mt-4">
+            <p><button onclick="document.getElementById('menu').style.display='block'"
+                    class="w3-button w3-black">ลูกค้า</button></p>
+            <p><button onclick="document.getElementById('admin').style.display='block'"
+                    class="w3-button w3-black">ร้านค้า</button></p>
+            <p><button onclick="document.getElementById('member').style.display='block'"
+                    class="w3-button w3-black">สมาชิก</button></p>
+        </div>
+        <div class="w3-display-topright w3-container w3-xlarge mt-4">
+
+        </div>
+        <div class="w3-display-bottomleft w3-container">
+            <p id="date"></p>
+        </div>
+    </div>
+
+    <!--user Modal -->
+    <div id="menu" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom">
+            <div class="w3-container w3-black w3-display-container text-center">
+                <span onclick="document.getElementById('menu').style.display='none'"
+                    class="w3-button w3-display-topright w3-large">x</span>
+                <h1>buy</h1>
+            </div>
+
+            <div class="w3-container p-3">
+                <form action="/input_name" method="POST" >
+                    <h3 class="ml-1">ชื่อเล่น</h2>
+                        <input class="mr-2" type="text" name="username" id="username" placeholder="nickname" autofocus required>
+                        <input type="submit" id="submit" value="sumit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end user modal -->
+
+    <!-- admin Modal -->
+    <div id="admin" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom">
+            <div class="w3-container w3-black w3-display-container text-center">
+                <span onclick="document.getElementById('admin').style.display='none'"
+                    class="w3-button w3-display-topright w3-large">x</span>
+                <h1>Admin</h1>
+            </div>
+            <div class="w3-container p-3">
+                <form action="" method="POST">
+                    <h3 class="ml-1">ชื่อ</h2>
+                        <input class="mr-2" type="text" name="name" id="username">
+                        <h3 class="mt-2 ml-1">รหัสผ่าน</h2>
+                            <input class="mr-2" type="text" name="name" id="password">
+                            <input type="submit" value="ตกลง" id="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end admin modal -->
+
+    <!-- member modal -->
+    <div id="member" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom">
+            <div class="w3-container w3-black w3-display-container text-center">
+                <span onclick="document.getElementById('member').style.display='none'"
+                    class="w3-button w3-display-topright w3-large">x</span>
+                <h1>สมาชิก</h1>
+            </div>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="static/img/member/m.jpg" class="m-3" alt="">
+                        <div class="container">พิสิฐไชย เรืองวัฒนาพงษ์</div>
+                    </div>
+                    <div class="col-6">
+                        <img src="static/img/member/m.jpg" class="m-3" alt="">
+                        <div class="container">พิสิฐไชย เรืองวัฒนาพงษ์</div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center mt-2">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="static/img/member/m.jpg" class="m-3" alt="">
+                        <div class="container">พิสิฐไชย เรืองวัฒนาพงษ์</div>
+                    </div>
+                    <div class="col-6">
+                        <img src="static/img/member/m.jpg" class="m-3" alt="">
+                        <div class="container">พิสิฐไชย เรืองวัฒนาพงษ์</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end member modal -->
+
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/script.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
