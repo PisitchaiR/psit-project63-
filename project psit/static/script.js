@@ -1,7 +1,8 @@
 function sivamtime() {
     now = new Date();
     d = now.getDay();
-    m = now.getMonth() + 1;
+    datee = now.getDate()
+    m = now.getMonth();
     y = now.getFullYear() + 543;
     hour = now.getHours();
     min = now.getMinutes();
@@ -16,7 +17,7 @@ function sivamtime() {
     else { hour = hour; add = "am"; }
     if (hour == 12) { add = "pm"; }
 
-    time = "วัน" + days[d] + " " + "เดือน" + months[m] + " " + y + "   " + "เวลา" + "  " + hour + ":" + min + ":" + sec + " " + add;;
+    time = "วัน" + days[d] + "ที่" + " " + datee + " " +"เดือน" + months[m] + " " + y + "   " + "เวลา" + "  " + hour + ":" + min + ":" + sec + " " + add;;
 
     if (document.getElementById) { date.innerHTML = time; }
     else if (document.layers) {
@@ -29,4 +30,3 @@ function sivamtime() {
 window.onload = sivamtime;
 
 //  https://www.thaicreate.com/php/forum/025326.html credit
-
