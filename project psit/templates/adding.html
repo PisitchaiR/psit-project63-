@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Ingrendent</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style/addmenu.css" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='/static/style/addmenu.css') }}" />
+</head>
+
+<body>
+    <h1 class="text-center">เพิ่มวัตถุดิบ</h1>
+    <div class="container mx-auto">
+        <form action="/ingredent" method="POST">
+            <div class="text">หมู</div>
+            <input class="input" type="number" name="pig">
+            <div class="text">หมึก</div>
+            <input class="input" type="number" name="squit">
+            <div class="text">กุ้ง</div>
+            <input class="input" type="number" name="chimp">
+            <div class="text">ไข่</div>
+            <input class="input" type="number" name="egg">
+            <div class="text">รวมทะเล</div>
+            <input class="input" type="number" name="seafood">
+            <div class="text">ไก่</div>
+            <input class="input" type="number" name="chicken">
+            <div class="text">หมูกรอบ</div>
+            <input class="input" type="number" name="mukob">
+            <input type="submit" value="ยืนยัน" class="btn btn-success ml-4">
+            <a href="/choose" class="btn btn-danger">ยกเลิก</a>
+        </form>
+
+    </div>
+</body>
+
+</html>
