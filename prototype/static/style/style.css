@@ -1,0 +1,56 @@
+body,
+html {
+    height: 100%;
+}
+
+.bgimg {
+    background-image: url('/static/img/bg.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    opacity: 80%;
+}
+
+@font-face {
+    font-family: thaifont;
+    src: url(/static/font/FC-Iconic/FC\ Iconic\ Bold\ Italic.ttf);
+}
+
+p,
+h1,
+h3 {
+    font-family: thaifont;
+}
+
+#submit {
+    border-radius: 20px;
+    border: none;
+    padding: 3px;
+    width: 50px;
+    background-color: #a8a8a8;
+    font-size: 18px;
+    font-family: thaifont;
+}
+
+#submit:hover {
+    background-color: #8b8b8b;
+    color: white;
+}
+
+#date {
+    font-size: 2.5vw;
+}
+
+input {
+    border-radius: 20px;
+    border: 1px solid lightslategray;
+    padding: 5px;
+    font-family: thaifont;
+}
+
+.container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    text-align: center;
+}

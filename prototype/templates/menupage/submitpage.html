@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style/show.css" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='/style/show.css') }}" />
+    <title>Submit Page</title>
+</head>
+
+<body>
+    <form action="/submit" method="post">
+        <div class="container mt-5">
+            <h1>ยืนยันอาหาร</h1>
+            <table class="table">
+                <thead>
+                    <th>รายการอาหาร</th>
+                    <th>ราคา</th>
+                </thead>
+                <tbody>
+                    {%for i in valuefood%}
+                    <tr>
+                        <td>{{i}}</td>
+                        <td>{{valuemoney[i][0]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <td class="resultmoney pt-3">ราคาทั้งหมด {{money}} บาท</td>
+            </table>
+            <input type="submit" value="ยืนยัน" class="btn btn-success">
+            <a href="/menupage" class="btn btn-danger">ยกเลิก</a>
+        </div>
+    </form>
+</body>
+
+</html>
